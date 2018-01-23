@@ -1,7 +1,5 @@
 FROM maven:3.5.2-jdk-8-alpine as s3-blobstore
 
-#WORKDIR /tmp/nexus-blobstore-s3
-#COPY ../nexus-blobstore-s3/ .
 RUN apk --update add --no-cache --virtual .build-deps \
     unzip \
     wget

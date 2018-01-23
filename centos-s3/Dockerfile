@@ -1,7 +1,10 @@
 FROM maven:3.5.2-jdk-8-alpine as s3-blobstore
-WORKDIR /tmp/nexus-blobstore-s3
-COPY ../nexus-blobstore-s3/ .
-RUN mvn clean install && \
+
+RUN wget --quiet https://github.com/sonatype/nexus-blobstore-s3/archive/ec6bdbf88df35a421424c72a6f118f6f364a9f6d.zip -O /tmp/nexus-blobstore-s3.zip && \
+    unzip /tmp/nexus-blobstore-s3.zip -d /tmp && \
+    mv /tmp/nexus-blobstore-s3-* /tmp/nexus-blobstore-s3 && \
+    cd /tmp/nexus-blobstore-s3 && \
+    mvn clean install && \
     PROJ_VERSION=$(mvn -q \
     -Dexec.executable="echo" \
     -Dexec.args='${project.version}' \
