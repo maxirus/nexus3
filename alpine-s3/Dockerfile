@@ -15,7 +15,7 @@ RUN wget --quiet https://github.com/sonatype/nexus-blobstore-s3/archive/ec6bdbf8
     org.codehaus.mojo:exec-maven-plugin:1.3.1:exec) && \
     echo "$PROJ_VERSION" > version
 
-FROM maxirus/nexus3:3.7.1
+FROM maxirus/nexus3:3.7.1-alpine
 
 #https://github.com/sonatype/nexus-blobstore-s3/archive/ec6bdbf88df35a421424c72a6f118f6f364a9f6d.zip
 
