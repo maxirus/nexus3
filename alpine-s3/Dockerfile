@@ -15,7 +15,7 @@ RUN apk --update add --no-cache --virtual .build-deps \
     org.codehaus.mojo:exec-maven-plugin:1.3.1:exec) && \
     echo "$PROJ_VERSION" > version
 
-FROM maxirus/nexus3:3.7.1-alpine
+FROM maxirus/nexus3:3.8.0-alpine
 
 #https://github.com/sonatype/nexus-blobstore-s3/archive/ec6bdbf88df35a421424c72a6f118f6f364a9f6d.zip
 
